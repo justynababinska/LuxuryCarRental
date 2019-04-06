@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+<title>Car Manager</title>
+</head>
+
+<body>
+	<div ng-controller="CarController as carControl">
+		<h1>{{carControl.appName}}</h1>
+		<input type="text" placeholder="Model" ng-model="carControl.car.model"><br />
+		<input type="text" placeholder="Brand" ng-model="carControl.car.brand"><br />
+		<input type="text" placeholder="Description" ng-model="carControl.car.description"><br />
+		<input type="number" placeholder="Price" ng-model="carControl.car.price"><br />
+		<button ng-click="carControl.addCar(carControl.car)">Add Car</button>
+
+		<h2>All Cars:</h2>
+		<ul>
+			<li ng-repeat="car in carControl.cars">{{car.model}} - {{car.brand}} - {{car.description}} - {{car.price}}</li>
+		</ul>
+	</div>
+
+	<script type="application/javascript" src="js/lib/angular/angular.js"></script>
+	<script type="application/javascript" src="js/app/app.js"></script>
+	<script type="application/javascript" src="js/app/services.js"></script>
+	<script type="application/javascript" src="js/app/controllers.js"></script>
+</body>
+</html>
