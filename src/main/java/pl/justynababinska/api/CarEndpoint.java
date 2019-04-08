@@ -1,4 +1,4 @@
-package pl.justynababinska.controller;
+package pl.justynababinska.api;
 
 import java.net.URI;
 import java.util.List;
@@ -19,12 +19,12 @@ import pl.justynababinska.repository.CarRepository;
 
 @RestController
 @RequestMapping("api/cars")
-public class CarController {
+public class CarEndpoint {
 
 	private CarRepository carRepository;
 
 	@Autowired
-	public CarController(CarRepository carRepository) {
+	public CarEndpoint(CarRepository carRepository) {
 		this.carRepository = carRepository;
 	}
 
@@ -37,7 +37,12 @@ public class CarController {
 	@GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Car> getCarById(@PathVariable(name = "id") Long id) {
 		Car car = carRepository.findById(id).get();
-		return ResponseEntity.ok(car);
+		if(car != null) {
+			return ResponseEntity.ok(car);
+		} else {
+			return ResponseEntity.notFound().build();
+		}
+		
 	}
 
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)

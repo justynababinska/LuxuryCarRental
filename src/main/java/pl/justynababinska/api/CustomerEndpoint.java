@@ -1,8 +1,8 @@
-package pl.justynababinska.controller;
+package pl.justynababinska.api;
 
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CustomerController {
+public class CustomerEndpoint {
 
 }

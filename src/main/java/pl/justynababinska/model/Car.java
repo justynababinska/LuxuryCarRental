@@ -1,13 +1,13 @@
 package pl.justynababinska.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,7 +17,7 @@ public class Car implements Serializable{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -5894331376634965677L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "car_id")
@@ -26,9 +26,7 @@ public class Car implements Serializable{
 	private String model;
 	@Column(length = 256)
 	private String description;
-	private double price; 
-	@ManyToOne
-	private Customer customer;
+	private double price;
 	
 	public Car() {}
 	
@@ -79,12 +77,28 @@ public class Car implements Serializable{
 		this.price = price;
 	}
 
-	public Customer getCustomer() {
-		return customer;
+	@Override
+	public int hashCode() {
+		return Objects.hash(brand, description, id, model, price);
 	}
 
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Car other = (Car) obj;
+		return Objects.equals(brand, other.brand) && Objects.equals(description, other.description) && id == other.id
+				&& Objects.equals(model, other.model)
+				&& Double.doubleToLongBits(price) == Double.doubleToLongBits(other.price);
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Car [id=" + id + ", brand=" + brand + ", model=" + model + ", description=" + description + ", price="
+				+ price + "]";
+	}
 }

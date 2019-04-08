@@ -1,0 +1,6 @@
+<h2>All Cars:</h2>
+<ul>
+    <li ng-repeat="car in listCtrl.cars">
+        <a ng-href="#!details/{{car.id}}">{{car.model}} - {{car.brand}} - {{car.description}} - {{car.price}}</a>
+    </li>
+</ul>
