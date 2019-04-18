@@ -1,6 +1,40 @@
-<h2>All Cars:</h2>
-<ul>
-    <li ng-repeat="car in listCtrl.cars">
-        <a ng-href="#!details/{{car.id}}">{{car.model}} - {{car.brand}} - {{car.description}} - {{car.price}}</a>
-    </li>
-</ul>
+<div class="container">
+	<div class="row">
+		<form>
+			<div class="input-group">
+				<input type="text" class="form-control"
+					placeholder="Search by brand" ng-model="brand">
+				<div class="input-group-btn">
+					<button class="btn btn-default" type="submit" ng-click="listCtrl.search(brand)">
+						<span class="glyphicon glyphicon-search">
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<div class="row">
+		<h2>All cars</h2>
+		<p>.........</p>
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th>Brand</th>
+					<th>Model</th>
+					<th>Price</th>
+					<th>Descripion</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="car in listCtrl.cars">
+					<td>{{car.brand}}</td>
+					<td>{{car.model}}</td>
+					<td>{{car.price}}</td>
+					<td>{{car.description}}</td>
+					<td><a ng-href="#!details/{{car.id}}">Details</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

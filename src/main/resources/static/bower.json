@@ -18,6 +18,10 @@
   "dependencies": {
     "angular": "^1.7.8",
     "angular-resource": "^1.7.8",
-    "angular-route": "^1.7.8"
+    "angular-route": "^1.7.8",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.15.0",
+    "sass-bootstrap-glyphicons": "^1.0.0"
   }
 }

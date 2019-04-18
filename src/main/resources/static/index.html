@@ -6,19 +6,53 @@
 </head>
 
 <body>
-	<a href="#!list">Strona główna</a>
-	<a href="#!new">Dodaj nową pozycję</a>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<!-- Brand -->
+		<a class="navbar-brand" href="#!list">LCR</a>
 
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" href="#!list">Main</a></li>
+				<li class="nav-item"><a class="nav-link" href="#!new">Add
+						new car</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="jumbotron text-center text-white bg-dark">
+		<h1>Luxury Car Rental</h1>
+	</div>
+	
 	<div ng-view></div>
 
-
 	<script type="application/javascript" src="js/lib/angular/angular.js"></script>
-	<script type="application/javascript" src="js/lib/angular-route/angular-route.js"></script>
-	<script type="application/javascript" src="js/lib/angular-resource/angular-resource.js"></script>
-	<script type="application/javascript" src="js/app.js"></script>
-    <script type="application/javascript" src="js/config.js"></script>
-    <script type="application/javascript" src="js/services.js"></script>
-	<script type="application/javascript" src="js/controllers.js"></script>
-</body>
+	<script type="application/javascript"
+		src="js/lib/angular-route/angular-route.js"></script>
+	<script type="application/javascript"
+		src="js/lib/angular-resource/angular-resource.js"></script>
+	<script type="application/javascript" src="js/app/app.js"></script>
+	<script type="application/javascript" src="js/app/config.js"></script>
+	<script type="application/javascript" src="js/app/services.js"></script>
+	<script type="application/javascript" src="js/app/controllers.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="js/lib/bootstrap/dist/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script type="application/javascript" src="js/lib/jquery/dist/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script type="application/javascript" src="js/lib/popper.js/dist/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script type="application/javascript" src="js/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+		
+	<link rel="stylesheet" href="js/lib/sass-bootstrap-glyphicons//css/bootstrap-glyphicons.css">
+	</body>
 </html>

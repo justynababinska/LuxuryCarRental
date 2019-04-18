@@ -2,6 +2,10 @@ angular.module('myApp')
 	.controller('ListController', function (Cars) {
 		var vm = this;
 		vm.cars = Cars.getAll();
+		vm.search = function(brand) {
+			console.log(brand);
+			vm.cars = Cars.getAll({brand});
+		}
 	})
 	.controller('DetailsController', function ($routeParams, Cars) {
 		var vm = this;
@@ -14,5 +18,5 @@ angular.module('myApp')
 		vm.saveCar = function () {
 			Cars.add(vm.car);
 			vm.car = new Car();
-		}
+		};
 	});
