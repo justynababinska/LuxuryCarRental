@@ -12,12 +12,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "car")
-public class Car implements Serializable{
-	
-	/**
-	 * 
-	 */
+public class Car implements Serializable {
 	private static final long serialVersionUID = -5894331376634965677L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "car_id")
@@ -27,9 +24,10 @@ public class Car implements Serializable{
 	@Column(length = 256)
 	private String description;
 	private double price;
-	
-	public Car() {}
-	
+
+	public Car() {
+	}
+
 	public Car(String brand, String model, String description, double price) {
 		this.brand = brand;
 		this.model = model;
