@@ -1,35 +1,18 @@
-package pl.justynababinska.model;
+package pl.justynababinska.dto;
 
-import java.io.Serializable;
+public class CustomerDto {
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "customer")
-public class Customer implements Serializable {
-	private static final long serialVersionUID = -2620559122929849895L;
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(name="first_name")
 	private String firstName;
-	@Column(name="last_name")
 	private String lastName;
 	private String mobile;
 	private String address;
-	@Column(name="identity_card")
 	private String identityCard;
 
-	public Customer() {
+	public CustomerDto() {
 	};
 
-	public Customer(String firstName, String lastName, String mobile, String address, String identityCard) {
+	public CustomerDto(String firstName, String lastName, String mobile, String address, String identityCard) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.mobile = mobile;
@@ -84,6 +67,4 @@ public class Customer implements Serializable {
 	public void setIdentityCard(String identityCard) {
 		this.identityCard = identityCard;
 	}
-
-	
 }

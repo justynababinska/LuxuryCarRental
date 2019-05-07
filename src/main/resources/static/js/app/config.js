@@ -21,6 +21,11 @@ angular.module('myApp')
 				controller: 'NewEdit_UserController',
 				controllerAs: 'newEdit_userCtrl'
 			})
+			.when('/customerList', {
+				templateUrl: 'views/customerList.html',
+				controller: 'List_CustomerController',
+				controllerAs: 'list_custCtrl'
+			})
 			.otherwise({
 				redirectTo: '/list'
 			});

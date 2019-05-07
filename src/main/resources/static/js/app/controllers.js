@@ -23,4 +23,8 @@ angular.module('myApp')
 			CarService.add(vm.car);
 			vm.car = new Car();
 		}
+	})
+	.controller('List_CustomerController', function(CustomerService) {
+		var vm = this;
+		vm.customers = CustomerService.getAll();
 	});
