@@ -1,0 +1,12 @@
+
+<h1>Input new or update</h1>
+<h2>{{newEdit_userCtrl.car.id}}</h2>
+<h2>{{newEdit_userCtrl.car.brand}}</h2>
+
+<form>
+	<label>Brand</label> <input type="text" placeholder="Brand" ng-model="newEdit_userCtrl.car.brand"><br>
+	<label>Model</label> <input type="text" placeholder="X5" ng-model="newEdit_userCtrl.car.model"><br>
+	<label>Description</label> <input type="text" placeholder="Description" ng-model="newEdit_userCtrl.car.description"><br>
+	<label>Price</label> <input type="number" placeholder="Price" ng-model="newEdit_userCtrl.car.price"><br>
+	<button ng-click="newEdit_userCtrl.saveCar()">Add car</button>
+</form>

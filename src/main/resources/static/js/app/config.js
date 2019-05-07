@@ -11,10 +11,15 @@ angular.module('myApp')
 				controller: 'DetailsController',
 				controllerAs: 'detailsCtrl'
 			})
-			.when('/new', {
-				templateUrl: 'views/new.html',
-				controller: 'NewController',
-				controllerAs: 'newCtrl'
+			.when('/newCar', {
+				templateUrl: 'views/newCar.html',
+				controller: 'NewEdit_UserController',
+				controllerAs: 'newEdit_userCtrl'
+			})
+			.when('/editCar/:id', {
+				templateUrl: 'views/newCar.html',
+				controller: 'NewEdit_UserController',
+				controllerAs: 'newEdit_userCtrl'
 			})
 			.otherwise({
 				redirectTo: '/list'

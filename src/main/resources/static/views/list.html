@@ -11,20 +11,20 @@
 				</div>
 			</div>
 		</form>
-		<button type="button" class="btn btn-secondary">Add car</button>
+		<a class="btn btn-secondary" href="#!newCar">Add Car</a>
 	</div>
 	
 	<div class="row">
 		<h2>All cars</h2>
-		<p>.........</p>
 		<table class="table">
 			<thead class="thead-dark">
 				<tr>
 					<th>Brand</th>
 					<th>Model</th>
 					<th>Price</th>
-					<th>Descripion</th>
+					<th>Description</th>
 					<th>Details</th>
+					<th>Options</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -34,6 +34,7 @@
 					<td>{{car.price}}</td>
 					<td>{{car.description}}</td>
 					<td><a ng-href="#!details/{{car.id}}">Details</a></td>
+					<td><a class="btn btn-secondary" href="#!editCar/{{car.id}}">Edit</a><a class="btn btn-secondary" href="">Rent</a><a class="btn btn-secondary" href="">Remove</a></td>
 				</tr>
 			</tbody>
 		</table>

@@ -1,22 +1,26 @@
 angular.module('myApp')
-	.controller('ListController', function (Cars) {
+	.controller('ListController', function (CarService) {
 		var vm = this;
-		vm.cars = Cars.getAll();
-		vm.search = function(brand) {
-			console.log(brand);
-			vm.cars = Cars.getAll({brand});
+		vm.cars = CarService.getAll();
+		vm.search = function (brand) {
+			vm.cars = CarService.getAll({brand});
 		}
 	})
-	.controller('DetailsController', function ($routeParams, Cars) {
+	.controller('DetailsController', function ($routeParams, CarService) {
 		var vm = this;
 		var carIndex = $routeParams.id;
-		vm.car = Cars.get(carIndex);
+		vm.car = CarService.get(carIndex);
 	})
-	.controller('NewController', function (Car, Cars) {
+	.controller('NewEdit_UserController', function ($routeParams, Car, CarService) {
 		var vm = this;
-		vm.car = new Car();
-		vm.saveCar = function () {
-			Cars.add(vm.car);
+		var carId = $routeParams.id;
+		if(carId)
+			vm.car = CarService.get(carId);
+		else
 			vm.car = new Car();
-		};
+		
+		vm.saveCar = function () {
+			CarService.add(vm.car);
+			vm.car = new Car();
+		}
 	});

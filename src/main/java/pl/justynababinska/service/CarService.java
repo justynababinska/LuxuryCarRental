@@ -28,4 +28,12 @@ public class CarService {
 		return carRepository.findAllByBrandContainingIgnoreCase(brand).stream().map(CarMapper::toDto)
 				.collect(Collectors.toList());
 	}
+
+	public CarDto findById(Long id) {
+		return CarMapper.toDto(carRepository.findById(id).get());
+	}
+	
+	public void save(CarDto carDto) {
+		carRepository.save(CarMapper.toEntity(carDto));
+	}
 }
